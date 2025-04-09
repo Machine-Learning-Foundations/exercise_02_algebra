@@ -98,9 +98,6 @@ will produce the coefficients for a straight line.
 4. Evaluate your first-degree polynomial via $c_1 + c_2 \cdot x$ and plot the result as well as the original data using `matplotlib.pyplot`'s `plot` function.
 
 
-Solution:
-
-![regression](./figures/regression.png)
 
 #### ⊙Task 1.2: Fitting a Polynomial to a function
 The straight line above is insufficient to model the data. 
@@ -112,9 +109,6 @@ So perform the very same steps as above, but change the degree of the polynomial
 What do you see?
 
 
-Solution:
-
-![regression](./figures/polyfit.png)
 
 
 #### ⊙Task 1.3: Regularization
@@ -185,9 +179,6 @@ Perform the following steps 2. - 4. for epsilon equal to 0.1, 1e-6, and 1e-12.
 3. Estimate the regularized coefficients by applying the formula above.
 4. Plot the result.
 
-Solution:
-
-![regression](./figures/regularized_fit.png)
 
 #### ✪Task 1.4: Model Complexity (Optional):
 Another solution to the overfitting problem is reducing the complexity of the model.
@@ -203,17 +194,8 @@ $$MSE=\frac{1}{N} \sum_{i=1}^{N} (y_i-\hat{y_i})^2$$
 6. Are the degree of the polynomial and the MSE linked?
    From the plot, estimate the optimal degree of polynomial and fit the polynomial with this specific degree.
 
-Solution:
-
-![model_complexity](./figures/model_complexity_mse.png)
 
 
-
-Solution:
-
-From the plot we observe that after degree 7, the mean squared error doesn't reduce substantially.
-
-![model_complexity](./figures/model_complexity_fit.png)
 
 ### Part 2: Rhine water level analysis
 Now we are ready to deal with real data! Feel free to use your favorite time series data or work with the Rhine level data we provide.
@@ -231,9 +213,6 @@ Now we want to do the same as in Part 1 and start with linear regression!
    Or in other words: On which day will the Rhine water level be at 0 cm? 
    > **Hint:** Plug in $y=0$ into the equation of your line with the estimated coefficients and solve for the date $x$.
 
-Solution:
-
-![regression](./figures/rhine_regression.png)
 
 
 #### ⊙ Task 2.2: Fitting a higher-order Polynomial
@@ -246,9 +225,6 @@ Re-using the code you wrote for the proof of concept task, fit a polynomial of d
 4. Evaluate the polynomial.
 5. Plot the result.
 
-Solution:
-
-![rhine_polyfit](./figures/rhine_polyfit.png)
 
 
 
@@ -264,9 +240,4 @@ Perform the following steps 2. - 4. for epsilon equal to 0.1, 1e-3, and 1e-9.
 3. Estimate the regularized coefficients by applying the formula from before. 
    > **Hint:** Remember the zero-block! You need degree-many rows and number-of-datapoints-many columns!
 4. Evaluate the regularized polynomial and plot the results.
-
-
-Solution:
-
-![rhine_reg_fit](./figures/rhine_regularized_fit.png)
 
