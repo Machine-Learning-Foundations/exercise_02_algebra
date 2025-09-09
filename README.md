@@ -1,5 +1,5 @@
 ## Linear Algebra Exercise
-Welcome to the exercise repository for day 3 of our course.
+Welcome to the exercise repository for day 2 of our course.
 To help you, we have prepared unit-tests.
 Use:
 ```shell
@@ -62,7 +62,7 @@ This will just be a straight line and there are only two coefficients $c_1$ and 
 Very often, this line is too simple to explain the data sufficiently.
 That is why we want to fit polynomials of higher order, so $n > 2$.
 Unfortunately, the more complex the model gets (i.e. the higher the order of the polynomial gets), the more noise will be tracked. Here we can make use of regularization techniques.
-In the first and following part, you will be given artificial data and in the second part you will make use of real data!
+In the first and following part, you will be given artificial data and in the second part you will make use of real data.
 
 ### Part 1: Proof of concept
 The line `b = pandas.read_csv('./data/noisy_signal.tab')` is used to load a noisy signal.
@@ -75,6 +75,7 @@ Linear regression is usually a good first step.
 
 1. Start by implementing the function `set_up_point_matrix` from the `src/regularization.py` module. 
 The function should produce polynomial-coordinate matrices $\mathbf{A}_n$ of the form:
+
 $$
 \mathbf{A}_n = 
 \begin{pmatrix}
@@ -89,17 +90,21 @@ $$
 2. Go to the main-function and use the function you just implemented to create the point-matrix A for n=2.
 
 3. Now,
-$$\mathbf{A}_2^{\dagger}\mathbf{b} = \mathbf{c} = \begin{pmatrix}
+
+$$
+\mathbf{A}_2^{\dagger}\mathbf{b} = \mathbf{c} = \begin{pmatrix}
           c_1         \\\\ 
           c_2       \\\\
-   \end{pmatrix} $$
+   \end{pmatrix} 
+$$
+
 will produce the coefficients for a straight line. 
 
 4. Evaluate your first-degree polynomial via $c_1 + c_2 \cdot x$ and plot the result as well as the original data using `matplotlib.pyplot`'s `plot` function.
 
 
 
-#### ⊙Task 1.2: Fitting a Polynomial to a function
+#### ⊙ Task 1.2: Fitting a Polynomial to a function
 The straight line above is insufficient to model the data. 
 So perform the very same steps as above, but change the degree of the polynomial to n=300  (to set up a square matrix since we have 300 data-points):
 1. Set up the point matrix by setting n=300.
