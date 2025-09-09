@@ -29,18 +29,18 @@ $$
           1       & a_2^1    & a_2^2  & \dots & a_2^{n-1}  \\\\
           1       & a_3^1    & a_3^2  & \dots & a_3^{n-1}  \\\\
           \vdots  & \vdots   & \vdots  & \ddots & \vdots \\\\ 
-          1       & a_m^1    & a_m^2  & \dots & a_m^{n-1}  \\\\
+          1       & a_m^1    & a_m^2  & \dots & a_m^{n-1}  
    \end{pmatrix} \cdot 
    \begin{pmatrix}
           c_1         \\\\ 
           \vdots   \\\\ 
-          c_n       \\\\
+          c_n      
    \end{pmatrix} = \begin{pmatrix}
           b_1         \\\\ 
           b_2       \\\\
           b_3       \\\\
           \vdots   \\\\ 
-          b_m       \\\\
+          b_m       
    \end{pmatrix}
 $$
 
@@ -83,7 +83,7 @@ $$
           1       & a_2^1    & a_2^2  & \dots & a_2^{n-1}  \\\\
           1       & a_3^1    & a_3^2  & \dots & a_3^{n-1}  \\\\
           \vdots  & \vdots   & \vdots  & \ddots & \vdots \\\\ 
-          1       & a_m^1    & a_m^2  & \dots & a_m^{n-1}  \\\\
+          1       & a_m^1    & a_m^2  & \dots & a_m^{n-1} 
    \end{pmatrix}
 $$ 
 
@@ -94,7 +94,7 @@ $$
 $$
 \mathbf{A}_2^{\dagger}\mathbf{b} = \mathbf{c} = \begin{pmatrix}
           c_1         \\\\ 
-          c_2       \\\\
+          c_2      
    \end{pmatrix} 
 $$
 
@@ -116,7 +116,7 @@ What do you see?
 
 
 
-#### ⊙Task 1.3: Regularization
+#### ⊙ Task 1.3: Regularization
 Unfortunately, the fit is not ideal. The polynomial is too complex and tracks the noise.
 The singular value decomposition (SVD) can help!
 Recall that the SVD turns a matrix
@@ -178,14 +178,14 @@ Setting n=300 turns A into a square matrix. In this case, the zero block in the 
 
 To sum it up, your tasks are:
 1. Compute the SVD of A.
-
-Perform the following steps 2. - 4. for epsilon equal to 0.1, 1e-6, and 1e-12.
 2. Compute the diagonal for the filter matrix and turn it into a matrix. 
 3. Estimate the regularized coefficients by applying the formula above.
 4. Plot the result.
 
+Perform the steps 2. - 4. for epsilon equal to 0.1, 1e-6, and 1e-12.
 
-#### ✪Task 1.4: Model Complexity (Optional):
+
+#### ✪ Task 1.4: Model Complexity (Optional):
 Another solution to the overfitting problem is reducing the complexity of the model.
 To assess the quality of polynomial fit to the data, compute and plot the Mean Squared Error (Mean Squared Error measure how close the regression line is to data points) for every degree of polynomial upto 20.
 So as before:
@@ -207,7 +207,7 @@ Now we are ready to deal with real data! Feel free to use your favorite time ser
 The file `./data/pegel.tab` contains the Rhine water levels measured in Bonn over the last 100 years. 
 Data source: https://pegel.bonn.de.
 
-#### ⊙Task 2.1 Regression
+#### ⊙ Task 2.1 Regression
 The `src/pegel_bonn.py` file already contains code to pre-load the data for you.
 The Rhine level measurements will be your new vector $\mathbf{b}$ from before.
 Now we want to do the same as in Part 1 and start with linear regression!
@@ -233,16 +233,17 @@ Re-using the code you wrote for the proof of concept task, fit a polynomial of d
 
 
 
-#### ⊙Task 2.3: Regularization
+#### ⊙ Task 2.3: Regularization
 Focus on the data from the year 2000 onward and filter the singular values.
 We will use again a degree of 20.
 Matrix A is not square in this case, because the degree is smaller than the number of datapoints! Consequently, a zero block must appear in your singular value matrix and when computing the Pseudoinverse from the SVD, $\sigma$ has to be transposed! 
 Like in Part 1:
-1. Compute the SVD of the point matrix from the previous task.
 
-Perform the following steps 2. - 4. for epsilon equal to 0.1, 1e-3, and 1e-9.
+1. Compute the SVD of the point matrix from the previous task.
 2. Compute the filter matrix.
 3. Estimate the regularized coefficients by applying the formula from before. 
    > **Hint:** Remember the zero-block! You need degree-many rows and number-of-datapoints-many columns!
 4. Evaluate the regularized polynomial and plot the results.
+
+Perform the steps 2. - 4. for epsilon equal to 0.1, 1e-3, and 1e-9.
 
